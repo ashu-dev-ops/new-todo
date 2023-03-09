@@ -1,9 +1,11 @@
 <%- include('../includes/head.ejs') %>
 <div class="page-100-task-add">
+  <h2 class="form-add-container">Add Task Form</h2>
   <form class="form-add-container" action="/task" method="post">
-    <!-- <h5>Add Tak</h5> -->
-    <label>select user</label>
+    <% if(users.length>=1){ %>
+
     <div class="form-row select-tag">
+      <label>select user</label>
       <select name="userId" id="user">
         <% users.forEach(function(user) { %>
 
@@ -15,7 +17,7 @@
       <label name="desc">Add Task</label>
       <textarea name="desc"> </textarea>
     </div>
-    <p>Please select task_status:</p>
+    <h5>Please select task status:</h5>
     <div class="check-box">
       <input type="radio" id="done" name="task_status" value="done" />
       <label for="done">done</label><br />
@@ -27,24 +29,42 @@
 
     <button class="main-btn">submit</button>
   </form>
+
+  <% } else{ %>
+  <h1>sorry no user</h1>
+  <% } %>
+  <!-- <h5>Add Tak</h5> -->
+
   <div class="line"></div>
   <div class="show-task-container">
     <div class="show-task-container-head">
       <h3>all task</h3>
-      <button class=".main-btn-two">print all</button>
+      <div class="">
+        <% if(AllUserTask.length>=1){ %>
+        <button class="main-btn-two">
+          <a href="/excel-user"> print user</a>
+        </button>
+        <button class="main-btn-two">
+          <a href="/excel-task"> print task</a>
+        </button>
+        <% } else{ %> <% } %>
+      </div>
     </div>
     <div class="show-task-container-box">
-      <% AllUserTask.forEach(function(user) { %>
+      <% if(AllUserTask.length>=1){ %> <% AllUserTask.forEach(function(user) {
+      %>
       <div class="task">
-        <h5>user : <%=user.name%></h5>
+        <h5>user : <span> <%=user.name%></span></h5>
         <% user.task.forEach(function(task) { %>
 
-        <h5><%=task.desc%></h6>
-        <p>status : <%=task.status%></p>
-
+        <h5>task : <span> <%=task.desc%> </span></h5>
+        <p>status : <span><%=task.status%></span></p>
+        <div class="line-2"></div>
         <% }); %>
       </div>
-      <% }); %>
+      <% }); %> <% } else{ %>
+      <h1>sorry no task</h1>
+      <% } %>
     </div>
   </div>
 </div>

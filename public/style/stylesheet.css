@@ -146,6 +146,11 @@ li {
   margin: 1rem;
   padding: 1rem;
 }
+.nav a {
+  font-size: 1.5rem;
+  color: #2c3338d3;
+  font-weight: bold;
+}
 
 /* 
  */
@@ -206,10 +211,18 @@ li {
 .line {
   background-color: #2c3338;
   width: 90%;
-  height: 7px;
+  height: 3px;
   border-radius: 10px 10px;
   /* margin: auto; */
   margin: 0 auto;
+}
+.line-2 {
+  background-color: #2c3338;
+  width: 90%;
+  height: 4px;
+  border-radius: 4px 4px;
+  /* margin: auto; */
+  margin: 4px auto;
 }
 
 .form-add-container {
@@ -252,15 +265,42 @@ li {
   margin: 0 3rem;
   display: flex;
   flex-wrap: nowrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .task {
   background-color: #bad7e967;
   min-width: 10rem;
-  max-width: 12rem;
+  /* max-width: 12rem; */
   padding: 1rem;
   -webkit-box-shadow: 10px -2px 20px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px -2px 20px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px -2px 20px 0px rgba(0, 0, 0, 0.75);
+}
+.task span {
+  color: #2c3338;
+}
+
+/* err page */
+.err-page {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.171);
+}
+.err-container {
+  /* background-image: url("403.png"); */
+  min-height: 40vh;
+  min-width: 30vh;
+  background-color: white;
+  -webkit-box-shadow: 10px -2px 20px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px -2px 20px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px -2px 20px 0px rgba(0, 0, 0, 0.75);
+  padding: 1rem;
+  border-radius: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

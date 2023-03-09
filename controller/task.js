@@ -12,6 +12,19 @@ const Task = db.task;
 const addTask = async (req, res) => {
   //   const id = req.params.id;
   // if(req.body.stat)
+
+  // !req.body.userId||
+  // !req.body.task_status||
+  // !req.body.desc ||
+
+  if (
+  !req.body.userId||
+  !req.body.task_status||
+  !req.body.desc 
+  )
+    return res.render("pages/err", {
+      msg: "input invalid : 403",
+    });
   let data = {
     user_id: req.body.userId,
     status: req.body.task_status,

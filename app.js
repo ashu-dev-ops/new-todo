@@ -3,6 +3,13 @@ const app = express();
 const userRoutes = require("./routes/user");
 const taskRoutes = require("./routes/task");
 const bodyParser = require("body-parser");
+const errPage = require("./controller/other");
+const { printUser, printTask } = require("./controller/print");
+const excel = require("exceljs");
+const fs = require("fs");
+const db = require("./model/index");
+const User = db.user;
+const Task = db.task;
 const { getUserTasks } = require("./controller/user");
 //
 require("./db/config");
@@ -19,6 +26,9 @@ app.use(express.static("public"));
 
 app.use("/register", userRoutes);
 app.use("/task", taskRoutes);
+app.get("/excel-user", printUser);
+app.get("/excel-task", printTask);
+app.get("/error-page", errPage);
 app.get("/dummy", getUserTasks);
 app.use("/", (req, res) => {
   res.render("pages/home");
