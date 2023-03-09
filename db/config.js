@@ -1,13 +1,9 @@
-// const Sequelize=require("sequelize")
-// const sequelize=new Sequelize("task-todo","root","1234",{
-//     dialect:"mysql"
-// })
-// module.exports=sequelize
+//pls(IMP) first create an db of this name in your database or mysql work bench then run it on
 module.exports = {
   HOST: "localhost",
   USER: "root",
-  PASSWORD: "1234",
-  DB: "node_sequelize_api_db",
+  PASSWORD: process.env.PSSSWORD, //please enter your own machine password
+  DB: "node_sequelize_api_db", //pls(IMP) first create an db of this name in your database or mysql work bench then run
   dialect: "mysql",
 };
 // imported to model
