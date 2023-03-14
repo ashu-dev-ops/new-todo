@@ -1,5 +1,6 @@
 <%- include('../includes/head.ejs') %>
-<div class="page-100-task-add">
+<div class="page-100-task-add
+ <div class="up">
   <h2 class="form-add-container">Add Task Form</h2>
   <form class="form-add-container" action="/task" method="post">
     <% if(users.length>=1){ %>
@@ -33,6 +34,7 @@
   <% } else{ %>
   <h1>sorry no user</h1>
   <% } %>
+  </div>
   <!-- <h5>Add Tak</h5> -->
 
   <div class="line"></div>
