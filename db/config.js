@@ -3,7 +3,7 @@ module.exports = {
   HOST: "localhost",
   USER: "root",
   PASSWORD: process.env.PSSSWORD, //please enter your own machine password
-  DB: "node_sequelize_api_db", //pls(IMP) first create an db of this name in your database or mysql work bench then run
+  DB: "abhay", //pls(IMP) first create an db of this name in your database or mysql work bench then run
   dialect: "mysql",
 };
 // imported to model
